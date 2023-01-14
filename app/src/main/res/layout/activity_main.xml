@@ -11,10 +11,10 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@drawable/output_container_background"
         android:gravity="center|end"
         android:orientation="vertical"
-        android:layout_weight="1"
         android:padding="16dp">
 
         <TextView
@@ -23,7 +23,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
-            android:text="2 + 3"
             android:textColor="@color/white"
             android:textDirection="rtl"
             android:textSize="60sp"
@@ -35,7 +34,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="63"
             android:textColor="@color/white"
             android:textDirection="rtl"
             android:textSize="35sp"
@@ -45,14 +43,14 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <com.google.android.flexbox.FlexboxLayout
-        android:layout_marginVertical="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
         android:layout_weight="2"
         app:alignContent="space_between"
+        app:flexDirection="row"
         app:flexWrap="wrap"
-        app:justifyContent="space_around"
-        app:flexDirection="row">
+        app:justifyContent="space_around">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ac_button"
