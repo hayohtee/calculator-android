@@ -1,234 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark"
-    android:orientation="vertical"
+    app:flexDirection="column"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="350dp"
         android:background="@drawable/output_container_background"
-        android:gravity="center|end"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp"
+        app:flexDirection="column"
+        app:justifyContent="center">
 
-        <TextView
-            android:id="@+id/input_textView"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/solution_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="8dp"
+            android:text="2 + 3 * 5"
             android:textColor="@color/white"
             android:textDirection="rtl"
-            android:textSize="60sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="50sp"
+            app:layout_alignSelf="flex_end" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/result_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:text="50"
             android:textColor="@color/white"
             android:textDirection="rtl"
-            android:textSize="35sp"
-            app:layout_constraintEnd_toEndOf="@+id/input_textView"
-            app:layout_constraintTop_toBottomOf="@+id/input_textView" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <com.google.android.flexbox.FlexboxLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
-        android:layout_weight="2"
-        app:alignContent="space_between"
-        app:flexDirection="row"
-        app:flexWrap="wrap"
-        app:justifyContent="space_around">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ac_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_1"
-            android:text="AC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bracket_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_2"
-            android:text="( )" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/modulo_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_2"
-            android:text="%" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/divide_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_2"
-            android:text="/" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/seven_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="7" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/eight_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="8" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nine_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="9" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/multiply_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_2"
-            android:text="X" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/four_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="4" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/five_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="5" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/six_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="6" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/subtract_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_2"
-            android:text="-" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/one_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="1" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/two_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="2" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/three_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="3" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/add_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_2"
-            android:text="+" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/zero_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="0" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/dot_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="." />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/delete_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_3"
-            android:text="DEL" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/equal_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background_4"
-            android:text="=" />
-
+            android:textSize="30sp"
+            app:layout_alignSelf="flex_end" />
 
     </com.google.android.flexbox.FlexboxLayout>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="10dp"
+        app:alignContent="space_around"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="space_evenly">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ac_button"
+            style="@style/button_style_1"
+            android:text="AC" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bracket_button"
+            style="@style/button_style_2"
+            android:text="( )" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/modulo_button"
+            style="@style/button_style_2"
+            android:text="%" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/divide_button"
+            style="@style/button_style_2"
+            android:text="/" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/seven_button"
+            style="@style/button_style_3"
+            android:text="7" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/eight_button"
+            style="@style/button_style_3"
+            android:text="8" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nine_button"
+            style="@style/button_style_3"
+            android:text="9" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/multiply_button"
+            style="@style/button_style_2"
+            android:text="*" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/four_button"
+            style="@style/button_style_3"
+            android:text="4" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/five_button"
+            style="@style/button_style_3"
+            android:text="5" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/six_button"
+            style="@style/button_style_3"
+            android:text="6" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/subtract_button"
+            style="@style/button_style_2"
+            android:text="-" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/one_button"
+            style="@style/button_style_3"
+            android:text="1" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/two_button"
+            style="@style/button_style_3"
+            android:text="2" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/three_button"
+            style="@style/button_style_3"
+            android:text="3" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_button"
+            style="@style/button_style_2"
+            android:text="+" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/zero_button"
+            style="@style/button_style_3"
+            android:text="0" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dot_button"
+            style="@style/button_style_3"
+            android:text="." />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clear_button"
+            style="@style/button_style_3"
+            android:text="C" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/equal_button"
+            style="@style/button_style_4"
+            android:text="=" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</com.google.android.flexbox.FlexboxLayout>
