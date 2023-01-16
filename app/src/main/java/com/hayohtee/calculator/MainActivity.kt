@@ -117,6 +117,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (str.isNotEmpty()) {
             solutionTextView.text = str.substring(0, str.length - 1)
         }
+
+        resultTextView.text = ""
     }
 
     // Perform calculation on the data given using javascript Context
