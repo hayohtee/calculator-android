@@ -125,10 +125,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val context = Context.enter()
             context.optimizationLevel = -1
             val scriptable = context.initStandardObjects()
-            context.evaluateString(
+
+            val result = context.evaluateString(
                 scriptable, data, "Javascript",
                 1, null
             ).toString()
+
+            if (result.endsWith(".0")) {
+                return result.replace(".0", "")
+            }
+            return result
         } catch (e: Exception) {
             "Err"
         }
