@@ -118,7 +118,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             solutionTextView.text = str.substring(0, str.length - 1)
         }
 
-        resultTextView.text = ""
+        val result = getResult(solutionTextView.text.toString())
+
+        if (result != "Err")
+            resultTextView.text = result
+        else
+            resultTextView.text = ""
     }
 
     // Perform calculation on the data given using javascript Context
