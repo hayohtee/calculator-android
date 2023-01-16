@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.google.android.material.button.MaterialButton
+import org.mozilla.javascript.Context
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var resultTextView: TextView
@@ -105,11 +106,56 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         resultTextView = findViewById(R.id.result_textview)
     }
 
+    // Clear the resultTextView and solutionTextView
+    private fun clearText() {
+        solutionTextView.text = ""
+        resultTextView.text = ""
+    }
+
+    // Remove the last text from solutionTextView
+    private fun clearLast(str: String) {
+        if (str.isNotEmpty()) {
+            solutionTextView.text = str.substring(0, str.length - 1)
+        }
+    }
+
+    // Perform calculation on the data given using javascript Context
+    private fun getResult(data: String): String {
+        return try {
+            val context = Context.enter()
+            context.optimizationLevel = -1
+            val scriptable = context.initStandardObjects()
+            context.evaluateString(
+                scriptable, data, "Javascript",
+                1, null
+            ).toString()
+        } catch (e: Exception) {
+            "Err"
+        }
+    }
+
+    // Add data to solutionTextView (mostly numbers)
+    @SuppressLint("SetTextI18n")
+    private fun addText(str: String) {
+        solutionTextView.text = solutionTextView.text.toString() + str
+    }
+
+    private fun displayResult(data: String) {
+        solutionTextView.text = getResult(data)
+        resultTextView.text = ""
+    }
+
+    // Implement the onClick listener for all the buttons
     override fun onClick(v: View?) {
         val button = v as MaterialButton
         val buttonText = button.text.toString()
+        val dataToCalculate = solutionTextView.text.toString()
 
-        solutionTextView.text = buttonText
-
+        when (buttonText) {
+            "AC" -> clearText()
+            "=" -> displayResult(dataToCalculate)
+            "C" -> clearLast(dataToCalculate)
+            else -> addText(buttonText)
+        }
     }
 }
