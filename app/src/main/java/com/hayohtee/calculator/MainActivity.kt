@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var buttonC: MaterialButton
     private lateinit var buttonOpenBracket: MaterialButton
     private lateinit var buttonCloseBracket: MaterialButton
+    private lateinit var buttonDivide: MaterialButton
     private lateinit var button7: MaterialButton
     private lateinit var button8: MaterialButton
     private lateinit var button9: MaterialButton
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         buttonCloseBracket = findViewById(R.id.button_close_bracket)
         buttonCloseBracket.setOnClickListener(this)
+
+        buttonDivide = findViewById(R.id.button_divide)
+        buttonDivide.setOnClickListener(this)
 
         button7 = findViewById(R.id.button_7)
         button7.setOnClickListener(this)
@@ -102,6 +106,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        val button = v as MaterialButton
+        val buttonText = button.text.toString()
+
+        solutionTextView.text = buttonText
+
     }
 }
