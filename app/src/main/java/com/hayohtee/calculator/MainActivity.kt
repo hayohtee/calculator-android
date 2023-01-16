@@ -116,14 +116,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun clearLast(str: String) {
         if (str.isNotEmpty()) {
             solutionTextView.text = str.substring(0, str.length - 1)
+            resultTextView.text = ""
         }
 
-        val result = getResult(solutionTextView.text.toString())
+        if (solutionTextView.text.toString().isNotEmpty()) {
 
-        if (result != "Err")
-            resultTextView.text = result
-        else
-            resultTextView.text = ""
+            val result = getResult(solutionTextView.text.toString())
+
+            if (result != "Err")
+                resultTextView.text = result
+            else
+                resultTextView.text = ""
+        }
     }
 
     // Perform calculation on the data given using javascript Context
