@@ -138,10 +138,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     private fun addText(str: String) {
         solutionTextView.text = solutionTextView.text.toString() + str
+
+        val finalResult = getResult(solutionTextView.text.toString())
+        if (finalResult != "Err") {
+            resultTextView.text = finalResult
+        }
     }
 
-    private fun displayResult(data: String) {
-        solutionTextView.text = getResult(data)
+    private fun displayResult() {
+        solutionTextView.text = resultTextView.text
         resultTextView.text = ""
     }
 
@@ -153,9 +158,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         when (buttonText) {
             "AC" -> clearText()
-            "=" -> displayResult(dataToCalculate)
+            "=" -> displayResult()
             "C" -> clearLast(dataToCalculate)
             else -> addText(buttonText)
         }
+
     }
 }
